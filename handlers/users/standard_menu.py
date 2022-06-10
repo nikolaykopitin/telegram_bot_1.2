@@ -5,7 +5,7 @@ from loader import dp
 from aiogram.dispatcher.filters import Command
 from aiogram import types
 
-from states import Test
+from states import Test, Talk
 from utils.misc import rate_limit
 
 
@@ -29,3 +29,10 @@ async def close_keyboards(message: types.Message):
 async def go_test(message: types.Message):
     await message.answer("Как вас зовут?", reply_markup=ReplyKeyboardRemove())
     await Test.Q1.set()
+
+
+@dp.message_handler(text="Спросить")
+async def go_talk(message: types.Message):
+    await message.answer("Спросите у меня как дела, либо свой вопрос", reply_markup=ReplyKeyboardRemove())
+    await Talk.T1.set()
+
