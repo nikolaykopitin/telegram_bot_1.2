@@ -5,6 +5,7 @@ from loader import dp
 from aiogram import types
 from states import Test
 
+
 @dp.message_handler(state=Test.Q1)
 async def answer_on_q1(message: types.Message, state: FSMContext):
     answer = message.text

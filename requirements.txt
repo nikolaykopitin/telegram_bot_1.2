@@ -1,4 +1,5 @@
 aiogram==2.20
 aiohttp==3.8.1
 aioredis==2.0.1
-python-dotenv
+python-dotenv~=0.20.0
+nltk~=3.7
